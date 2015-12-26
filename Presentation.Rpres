@@ -1,0 +1,43 @@
+MTCARS shiny App
+========================================================
+author: Gabriele
+date: 26/12/2015 
+
+App Description
+========================================================
+
+This App shows the relationships between the Miles Per Gallon (MPG) and
+the other variables, as in the MTCARS data set.
+- Number of cylinders = "cyl"
+- Displacement (cu.in.) = "disp",
+- Gross horsepower = "hp",
+- Rear axle ratio = "drat",
+- Weight (lb/1000) = "wt",
+- 1/4 mile time = "qsec",
+- V/S = "vs",
+- Transmission type = "am",
+- Number of forward gears = "gear",
+- Number of carburetors = "carb"
+
+
+Data Source
+========================================================
+The data was extracted from the 1974 Motor Trend US magazine,                                     " and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models).
+
+
+Analysis example : mpg vs. qsec (1/2)
+========================================================
+
+```{r}
+library(datasets)
+m <-lm(mpg~qsec, data = mtcars)
+summary(m)
+
+```
+
+Analysis example : mpg vs. qsec (2/2)
+========================================================
+
+```{r}
+with(mtcars, {plot(mpg~qsec); abline(m,col=2)})
+```
